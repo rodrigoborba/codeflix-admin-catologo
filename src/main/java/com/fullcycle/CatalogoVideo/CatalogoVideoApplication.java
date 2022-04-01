@@ -1,13 +1,13 @@
-package com.fullcycle.CataologoVideo;
+package com.fullcycle.CatalogoVideo;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class CataologoVideoApplication {
+public class CatalogoVideoApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(CataologoVideoApplication.class, args);
+		SpringApplication.run(CatalogoVideoApplication.class, args);
 	}
 
 }
