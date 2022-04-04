@@ -1,21 +1,34 @@
-package com.fullcycle.CatalogoVideo.domain;
+package com.fullcycle.CatalogoVideo.domain.entity;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertFalse;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
+
+import com.fullcycle.CatalogoVideo.domain.exception.DomainException;
 
 @ExtendWith(SpringExtension.class)
 @SpringBootTest
 public class CategoryTest {
 	
 	@Test
-	public void createCategoryWithName() throws Exception {
+	public void throwDomainExceptionWhenNameIsNull() {
+		Assertions.assertThrows(DomainException.class, () -> new Category(null, "Desc"));
+	}
+	
+	@Test
+	public void throwDomainExceptionWhenNameIsBlank() {
+		Assertions.assertThrows(DomainException.class, () -> new Category("", "Desc"));
+	}
+	
+	@Test
+	public void createCategoryWithName()  {
 		
 		String nome = "Name 1";
 		final Category entity = new Category(
@@ -28,7 +41,7 @@ public class CategoryTest {
 	}
 	
 	@Test
-	public void createCategoryAndActive() throws Exception {
+	public void createCategoryAndActive()  {
 		
 		String nome = "Name 1";
 		final Category entity = new Category(
@@ -41,7 +54,7 @@ public class CategoryTest {
 	}
 	
 	@Test
-	public void createCategoryAndDeactive() throws Exception {
+	public void createCategoryAndDeactive()  {
 		
 		String nome = "Name 1";
 		final Category entity = new Category(
@@ -55,7 +68,7 @@ public class CategoryTest {
 	}
 	
 	@Test
-	public void createCategoryAndUpdate() throws Exception {
+	public void createCategoryAndUpdate() {
 		
 		String nome = "Name 1";
 		final Category entity = new Category(

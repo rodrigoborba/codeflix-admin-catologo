@@ -1,6 +1,9 @@
-package com.fullcycle.CatalogoVideo.domain;
+package com.fullcycle.CatalogoVideo.domain.entity;
 
 import java.util.UUID;
+
+import com.fullcycle.CatalogoVideo.domain.exception.NotBlankException;
+import com.fullcycle.CatalogoVideo.domain.exception.NotNullException;
 
 public class Category {
 	
@@ -9,14 +12,14 @@ public class Category {
 	private String description;
 	private Boolean isActive = true;
 	
-	public Category(UUID id, String name, String description) throws Exception {
+	public Category(UUID id, String name, String description) {
 		super();
 		setId(UUID.randomUUID());
 		setName(name);
 		setDescription(description);
 	}
 	
-	public Category(String name, String description) throws Exception {
+	public Category(String name, String description) {
 		super();
 		setId(UUID.randomUUID());
 		setName(name);
@@ -35,12 +38,12 @@ public class Category {
 		return name;
 	}
 	
-	public void setName(String name) throws Exception {
+	public void setName(String name) {
 		if(null == name) {
-			throw new Exception("Can not be null");
+			throw new NotNullException("Can not be null");
 		}
 		if(name.isEmpty()) {
-			throw new Exception("Can not be empty");
+			throw new NotBlankException("Can not be empty");
 		}
 		this.name = name;
 	}
@@ -69,7 +72,7 @@ public class Category {
 		return this.isActive = false;
 	}
 	
-	public void update(String name, String description, Boolean isActive) throws Exception {
+	public void update(String name, String description, Boolean isActive) {
 		this.setName(name);
 		this.setDescription(description);
 		
