@@ -1,6 +1,5 @@
 package com.fullcycle.CatalogoVideo.application.category;
 
-import static org.mockito.Mockito.doReturn;
 import static org.mockito.Mockito.times;
 import static org.mockito.Mockito.verify;
 
@@ -11,7 +10,6 @@ import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.ArgumentMatchers;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
@@ -19,7 +17,6 @@ import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import com.fullcycle.CatalogoVideo.application.usecase.category.common.CategoryOutputData;
 import com.fullcycle.CatalogoVideo.application.usecase.category.findall.FindAllCategoryUseCase;
-import com.fullcycle.CatalogoVideo.application.usecase.category.findall.IFindAllCategoryUseCase;
 import com.fullcycle.CatalogoVideo.domain.entity.Category;
 import com.fullcycle.CatalogoVideo.domain.repository.ICategoryRepository;
 
