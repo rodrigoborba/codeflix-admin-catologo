@@ -30,7 +30,7 @@ public class CreateCategoryUseCaseTests {
 	
 	@BeforeEach
 	void initUseCase() {
-		
+		useCase = new CreateCategoryUseCase(repository);
 	}
 	
 	@Test
